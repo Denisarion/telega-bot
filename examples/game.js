@@ -1,5 +1,5 @@
-const TeleBot = require('../');
-const bot = new TeleBot('TELEGRAM_BOT_TOKEN');
+const TelegaBot = require('../');
+const bot = new TelegaBot('TELEGRAM_BOT_TOKEN');
 
 const GAME_ID = 'YOUR_GAME_ID';
 const GAME_URL = 'http://your-game-url.com';
@@ -18,7 +18,7 @@ bot.on('callbackQuery', (msg) => {
 
     if (gameId == GAME_ID) {
         // Send game url
-        return bot.answerCallbackQuery(msg.id, {url: GAME_URL});
+        return bot.answerCallbackQuery(msg.id, { url: GAME_URL });
     }
 
 });

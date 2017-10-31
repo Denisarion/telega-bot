@@ -1,5 +1,5 @@
-const TeleBot = require('../');
-const bot = new TeleBot('TELEGRAM_BOT_TOKEN');
+const TelegaBot = require('../');
+const bot = new TelegaBot('TELEGRAM_BOT_TOKEN');
 
 bot.on('/time', msg => {
 
@@ -14,10 +14,7 @@ function updateTime(chatId, messageId) {
 
     // Update every second
     setInterval(() => {
-        bot.editMessageText(
-            {chatId, messageId}, `<b>Current time:</b> ${ time() }`,
-            {parseMode: 'html'}
-        ).catch(error => console.log('Error:', error));
+        bot.editMessageText({ chatId, messageId }, `<b>Current time:</b> ${ time() }`, { parseMode: 'html' }).catch(error => console.log('Error:', error));
     }, 1000);
 
 }

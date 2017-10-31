@@ -1,5 +1,5 @@
-const TeleBot = require('../');
-const bot = new TeleBot('TELEGRAM_BOT_TOKEN');
+const TelegaBot = require('../');
+const bot = new TelegaBot('TELEGRAM_BOT_TOKEN');
 
 // Send user message to himself
 bot.on('text', msg => bot.sendMessage(msg.from.id, msg.text));

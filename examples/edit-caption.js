@@ -1,5 +1,5 @@
-const TeleBot = require('../');
-const bot = new TeleBot('TELEGRAM_BOT_TOKEN');
+const TelegaBot = require('../');
+const bot = new TelegaBot('TELEGRAM_BOT_TOKEN');
 
 var lastMessage;
 var photoUrl = 'https://telegram.org/img/tl_card_destruct.gif';
@@ -8,7 +8,7 @@ bot.on('/start', msg => {
 
     // Send image with caption
     return bot.sendPhoto(
-        msg.from.id, photoUrl, {caption: 'This is a default caption.'}
+        msg.from.id, photoUrl, { caption: 'This is a default caption.' }
     ).then(re => {
         // Get message id and chat
         lastMessage = [msg.from.id, re.result.message_id];
@@ -29,7 +29,7 @@ bot.on('/edit', msg => {
     if (caption == '/edit') caption = 'No caption.';
 
     // Change caption
-    return bot.editMessageCaption({chatId, messageId}, caption).then(() => {
+    return bot.editMessageCaption({ chatId, messageId }, caption).then(() => {
         bot.sendMessage(msg.from.id, `Caption changed to: ${ caption }`);
     });
 

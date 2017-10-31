@@ -3,8 +3,8 @@
   Shows random Kitty pictures and gifs.
 */
 
-const TeleBot = require('../');
-const bot = new TeleBot('TELEGRAM_BOT_TOKEN');
+const TelegaBot = require('../');
+const bot = new TelegaBot('TELEGRAM_BOT_TOKEN');
 
 // Great API for this bot
 const API = 'https://thecatapi.com/api/images/get?format=src&type=';
@@ -12,26 +12,26 @@ const API = 'https://thecatapi.com/api/images/get?format=src&type=';
 // Command keyboard
 const replyMarkup = bot.keyboard([
     ['/kitty', '/kittygif']
-], {resize: true, once: false});
+], { resize: true, once: false });
 
 // Log every text message
-bot.on('text', function (msg) {
+bot.on('text', function(msg) {
     console.log(`[text] ${ msg.chat.id } ${ msg.text }`);
 });
 
 // On command "start" or "help"
-bot.on(['/start', '/help'], function (msg) {
+bot.on(['/start', '/help'], function(msg) {
 
     return bot.sendMessage(msg.chat.id,
-        '😺 Use commands: /kitty, /kittygif and /about', {replyMarkup}
+        '😺 Use commands: /kitty, /kittygif and /about', { replyMarkup }
     );
 
 });
 
 // On command "about"
-bot.on('/about', function (msg) {
+bot.on('/about', function(msg) {
 
-    let text = '😽 This bot is powered by TeleBot library ' +
+    let text = '😽 This bot is powered by TelegaBot library ' +
         'https://github.com/kosmodrey/telebot Go check the source code!';
 
     return bot.sendMessage(msg.chat.id, text);
@@ -39,7 +39,7 @@ bot.on('/about', function (msg) {
 });
 
 // On command "kitty" or "kittygif"
-bot.on(['/kitty', '/kittygif'], function (msg) {
+bot.on(['/kitty', '/kittygif'], function(msg) {
 
     let promise;
     let id = msg.chat.id;

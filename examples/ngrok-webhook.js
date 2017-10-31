@@ -1,4 +1,4 @@
-const TeleBot = require('../');
+const TelegaBot = require('../');
 const ngrok = require('ngrok');
 
 const token = 'TELEGRAM_BOT_TOKEN';
@@ -9,8 +9,9 @@ ngrok.connect(port, (error, url) => {
 
     if (error) return console.error('[ngrok] error:', error);
 
-    const bot = new TeleBot({
-        token, webhook: {url, host, port}
+    const bot = new TelegaBot({
+        token,
+        webhook: { url, host, port }
     });
 
     bot.on('text', msg => bot.sendMessage(msg.from.id, msg.text));

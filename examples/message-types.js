@@ -1,5 +1,5 @@
-const TeleBot = require('../');
-const bot = new TeleBot('TELEGRAM_BOT_TOKEN');
+const TelegaBot = require('../');
+const bot = new TelegaBot('TELEGRAM_BOT_TOKEN');
 
 // On every type of message (& command)
 bot.on(['*', '/*'], (msg, self) => {
@@ -8,7 +8,7 @@ bot.on(['*', '/*'], (msg, self) => {
     let type = self.type;
     let parseMode = 'html';
     return bot.sendMessage(
-        id, `This is a <b>${ type }</b> message.`, {replyToMessage, parseMode}
+        id, `This is a <b>${ type }</b> message.`, { replyToMessage, parseMode }
     );
 });
 

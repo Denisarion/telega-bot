@@ -1,5 +1,5 @@
-const TeleBot = require('../');
-const bot = new TeleBot('TELEGRAM_BOT_TOKEN');
+const TelegaBot = require('../');
+const bot = new TelegaBot('TELEGRAM_BOT_TOKEN');
 
 var lastMessage;
 
@@ -8,7 +8,7 @@ bot.on('/start', msg => {
     const markup = updateKeyboard('apples');
 
     return bot.sendMessage(
-        msg.from.id, 'This is a editMessageReplyMarkup example. So, apples or oranges?', {markup}
+        msg.from.id, 'This is a editMessageReplyMarkup example. So, apples or oranges?', { markup }
     ).then(re => {
         // Start updating message
         lastMessage = [msg.from.id, re.result.message_id];
@@ -29,7 +29,7 @@ bot.on('callbackQuery', msg => {
     const replyMarkup = updateKeyboard(data);
 
     // Edit message markup
-    return bot.editMessageReplyMarkup({chatId, messageId}, {replyMarkup});
+    return bot.editMessageReplyMarkup({ chatId, messageId }, { replyMarkup });
 
 });
 
@@ -49,8 +49,8 @@ function updateKeyboard(fruit) {
 
     return bot.inlineKeyboard([
         [
-            bot.inlineButton(apples, {callback: 'apples'}),
-            bot.inlineButton(oranges, {callback: 'oranges'})
+            bot.inlineButton(apples, { callback: 'apples' }),
+            bot.inlineButton(oranges, { callback: 'oranges' })
         ]
     ]);
 

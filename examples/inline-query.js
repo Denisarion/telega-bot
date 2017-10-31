@@ -1,5 +1,5 @@
-const TeleBot = require('../');
-const bot = new TeleBot('TELEGRAM_BOT_TOKEN');
+const TelegaBot = require('../');
+const bot = new TelegaBot('TELEGRAM_BOT_TOKEN');
 
 // On inline query
 bot.on('inlineQuery', msg => {
@@ -8,7 +8,7 @@ bot.on('inlineQuery', msg => {
     console.log(`inline query: ${ query }`);
 
     // Create a new answer list object
-    const answers = bot.answerList(msg.id, {cacheTime: 60});
+    const answers = bot.answerList(msg.id, { cacheTime: 60 });
 
     // Article
     answers.addArticle({

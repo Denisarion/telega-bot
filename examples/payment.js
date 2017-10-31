@@ -1,25 +1,25 @@
-const TeleBot = require('../');
-const bot = new TeleBot('TELEGRAM_BOT_TOKEN');
+const TelegaBot = require('../');
+const bot = new TelegaBot('TELEGRAM_BOT_TOKEN');
 
 bot.on('/start', (msg) => {
 
     const inlineKeyboard = bot.inlineKeyboard([
         [
-            bot.inlineButton('Take all my money!', {pay: true})
+            bot.inlineButton('Take all my money!', { pay: true })
         ]
     ]);
 
     return bot.sendInvoice(msg.from.id, {
         title: 'My Test Invoice',
-        description: 'TeleBot loves payments!',
+        description: 'TelegaBot loves payments!',
         payload: 'telebot-test-invoice',
         providerToken: 'PAYMENT_PROVIDER_TOKEN',
         startParameter: 'pay',
         currency: 'EUR',
         prices: [
-            {label: 'Tea', amount: 125},
-            {label: 'For testing!', amount: 1250},
-            {label: 'Discount', amount: -120}
+            { label: 'Tea', amount: 125 },
+            { label: 'For testing!', amount: 1250 },
+            { label: 'Discount', amount: -120 }
         ],
         replyMarkup: inlineKeyboard
     }).then(data => {

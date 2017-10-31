@@ -2,11 +2,12 @@
 
 
 THIS IS FORK by TELEBOT https://github.com/mullwar/telebot
+
 The easy way to write Telegram bots. 
 
-[![Build Status](https://travis-ci.org/mullwar/telebot.svg)](https://travis-ci.org/mullwar/telebot) [![Dependency Status](https://david-dm.org/mullwar/telebot.svg)](https://david-dm.org/mullwar/telebot) ![Node.js Version](http://img.shields.io/node/v/telebot.svg)
+[![Build Status](https://travis-ci.org/VBIralo/telega-bot.svg)](https://travis-ci.org/VBIralo/telega-bot) [![Dependency Status](https://david-dm.org/VBIralo/telega-bot.svg)](https://david-dm.org/VBIralo/telega-bot) ![Node.js Version](http://img.shields.io/node/v/telebot.svg)
 
-[![TeleBot Plugins](https://img.shields.io/badge/telebot-plugins-blue.svg)](https://github.com/mullwar/telebot-plugins) [![TeleBot Examples](https://img.shields.io/badge/telebot-examples-blue.svg)](https://github.com/mullwar/telebot/tree/master/examples) [![TeleBot Bot](https://img.shields.io/badge/telebot-community%20bot-blue.svg)](https://github.com/mullwar/telebot-bot) [![TeleBot Group](https://img.shields.io/badge/telebot-community%20group-blue.svg)](https://goo.gl/gXvm12)
+[![TelegaBot Plugins](https://img.shields.io/badge/telebot-plugins-blue.svg)](https://github.com/VBIralo/telega-bot-plugins) [![TelegaBot Examples](https://img.shields.io/badge/telebot-examples-blue.svg)](https://github.com/VBIralo/telega-bot/tree/master/examples) [![TelegaBot Bot](https://img.shields.io/badge/telebot-community%20bot-blue.svg)](https://github.com/VBIralo/telega-bot-bot) [![TelegaBot Group](https://img.shields.io/badge/telebot-community%20group-blue.svg)](https://goo.gl/gXvm12)
 
 
 **Library features:**
@@ -14,37 +15,37 @@ The easy way to write Telegram bots.
 - 🍎 Simple. Easy to use.
 - 🏰 Full [Telegram Bot API](https://core.telegram.org/bots/API) support.
 - 💰 Supports [payments](https://core.telegram.org/bots/payments).
-- 🔌 Supports [plugins](https://github.com/mullwar/telebot-plugins)!
+- 🔌 Supports [plugins](https://github.com/VBIralo/telega-bot-plugins)!
 - 📡 Build-in modification and event system.
 - 🛠 Extendable and hackable.
 - 🔮 No callbacks, Promises only.
-- 🤓 Readable [changelog](https://github.com/mullwar/telebot/releases).
-- ☺️ Friendly [TeleBot community group](https://goo.gl/gXvm12).
+- 🤓 Readable [changelog](https://github.com/VBIralo/telega-bot/releases).
+- ☺️ Friendly [TelegaBot community group](https://goo.gl/gXvm12).
 
 ## 🔨 Installation
 
-Download and install via [npm package manager](https://www.npmjs.com/package/telebot) (stable):
+Download and install via [npm package manager](https://www.npmjs.com/package/telega-bot) (stable):
 
 ```
-npm install telebot --save
+npm install telega-bot --save
 ```
 
 Or clone fresh code directly from git:
 
 ```
-git clone https://github.com/mullwar/telebot.git
-cd telebot
+git clone https://github.com/VBIralo/telega-bot.git
+cd telega-bot
 npm install
 ```
 
 ## 🕹 Usage
 
-Import `telebot` module and create a new bot object:
+Import `telega-bot` module and create a new bot object:
 
 ```js
-const TeleBot = require('telebot');
+const telega-bot = require('telebot');
 
-const bot = new TeleBot({
+const bot = new TelegaBot({
     token: 'TELEGRAM_BOT_TOKEN', // Required. Telegram Bot API token.
     polling: { // Optional. Use polling.
         interval: 1000, // Optional. How often check updates (in ms).
@@ -75,8 +76,8 @@ const bot = new TeleBot({
 Or just:
 
 ```js
-const TeleBot = require('telebot');
-const bot = new TeleBot('TELEGRAM_BOT_TOKEN');
+const TelegaBot = require('telega-bot');
+const bot = new TelegaBot('TELEGRAM_BOT_TOKEN');
 ```
 
 *Don't forget to insert your [Telegram Bot API](https://core.telegram.org/bots#create-a-new-bot) token key.*
@@ -138,7 +139,7 @@ bot.on('edit', (msg) => {
 
 ## ⏰ Events
 
-Use ```bot.on(<event>, <function>)``` to handle all possible TeleBot events.
+Use ```bot.on(<event>, <function>)``` to handle all possible TelegaBot events.
 
 For example, to catch a command, just add a slash:
 
@@ -156,7 +157,7 @@ bot.on(['/start', 'audio', 'sticker'], msg => {
 });
 ```
 
-### TeleBot events:
+### TelegaBot events:
 
 - **/&#42;** – any user command
 - **/\<cmd\>** – on specific command
@@ -223,7 +224,7 @@ bot.mod('text', (data) => {
 
 This code adds emoji to every `text` message.
 
-### TeleBot modifiers:
+### TelegaBot modifiers:
 
 - **property** - mod form properties
 - **updateList** - list of updates in one tick
@@ -236,7 +237,7 @@ This code adds emoji to every `text` message.
 Use `usePlugins` config option to load plugins from `pluginFolder` directory:
 
 ```js
-const bot = new TeleBot({
+const bot = new TelegaBot({
     token: 'TELEGRAM_BOT_TOKEN',
     usePlugins: ['askUser', 'commandButtons'],
     pluginFolder: '../plugins/',
@@ -267,7 +268,7 @@ module.exports = {
 
 ## ⚙️ Methods
 
-### TeleBot methods:
+### TelegaBot methods:
 
 ##### `on(<events>, <function>)`
 
@@ -323,7 +324,7 @@ Stop polling updates.
 
 ### Telegram methods:
 
-TeleBot use standard [Telegram Bot API](https://core.telegram.org/bots/api#available-methods) method names.
+TelegaBot use standard [Telegram Bot API](https://core.telegram.org/bots/api#available-methods) method names.
 
 ##### `getMe()`
 

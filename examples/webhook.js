@@ -1,6 +1,6 @@
-const TeleBot = require('../');
+const TelegaBot = require('../');
 
-const bot = new TeleBot({
+const bot = new TelegaBot({
     token: 'TELEGRAM_BOT_TOKEN',
     webhook: {
         // Self-signed certificate:
