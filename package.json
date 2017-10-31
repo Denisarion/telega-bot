@@ -1,6 +1,6 @@
 {
   "name": "telega-bot",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "The easy way to write Telegram bots. Fork telebot",
   "main": "lib/telega-bot.js",
   "engines": {
