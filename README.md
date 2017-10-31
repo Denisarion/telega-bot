@@ -1,6 +1,8 @@
 ![](http://i.imgur.com/eELz6Aw.jpg)
 
-The easy way to write Telegram bots.
+
+THIS IS FORK by TELEBOT https://github.com/mullwar/telebot
+The easy way to write Telegram bots. 
 
 [![Build Status](https://travis-ci.org/mullwar/telebot.svg)](https://travis-ci.org/mullwar/telebot) [![Dependency Status](https://david-dm.org/mullwar/telebot.svg)](https://david-dm.org/mullwar/telebot) ![Node.js Version](http://img.shields.io/node/v/telebot.svg)
 

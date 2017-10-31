@@ -8,3 +8,4 @@ test/
 .eslintrc.js
 .travis.yml
 package-lock.json
+cmd.exe
