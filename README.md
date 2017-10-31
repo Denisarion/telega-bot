@@ -43,7 +43,7 @@ npm install
 Import `telega-bot` module and create a new bot object:
 
 ```js
-const telega-bot = require('telebot');
+const TelegaBot = require('telega-bot');
 
 const bot = new TelegaBot({
     token: 'TELEGRAM_BOT_TOKEN', // Required. Telegram Bot API token.
