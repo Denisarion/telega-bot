@@ -46,7 +46,7 @@ module.exports = {
             // Stringify object data
             const jsonData = s(JSON.stringify(event, (k, v) => {
                 return v.value instanceof Buffer ? '[Buffer]' : v;
-            }));
+            }, '  '));
 
 
             // Send to every user in list
