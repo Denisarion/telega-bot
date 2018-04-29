@@ -1,17 +1,25 @@
-/*
-    Get direct answers from user.
-*/
-
 const userList = {};
 
 module.exports = {
 
     id: 'askUser',
+    defaultConfig: {
+        messageTypes: ['text']
+    },
 
-    plugin(bot) {
+    plugin(bot, pluginConfig) {
 
+        const indx = pluginConfig.messageTypes.indexOf('*');
+        if (indx > -1) {
+            console.error('ERROR using askUser plugin: type \'*\' is not allowed, it cause a bug. removing');
+            pluginConfig.messageTypes.splice(indx, 1);
+        }
+        if (pluginConfig.messageTypes.length===0) {
+            console.error('ERROR using askUser plugin: you must specify at least one valid type. adding type \'text\'');
+            pluginConfig.messageTypes.push('text');
+        }
         // On every message
-        bot.on('*', (msg, props) => {
+        bot.on(pluginConfig.messageTypes, (msg, props) => {
 
             const id = msg.chat.id;
             const ask = userList[id];
@@ -22,7 +30,6 @@ module.exports = {
             // Delete user from list and send custom event
             delete userList[id];
             bot.event('ask.' + ask, msg, props);
-            console.log(props.match, userList[id])
 
         });
 
